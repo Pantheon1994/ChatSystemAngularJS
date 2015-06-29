@@ -1,0 +1,23 @@
+[
+  {
+    "id" : 1,
+    "user" : "User B",
+    "text" : "Lorem Ipsum",
+    "date" : 1288323623006,
+    "edited" : false
+  },
+  {
+    "id": 2,
+    "user": "User C",
+    "text" : "Dalum ipsum",
+    "date" : 1288323623006,
+    "edited" : false
+  },
+  {
+    "id" : 3,
+    "user" : "User D",
+    "text" : "Dalum ipsum",
+    "date" : 1288323623006,
+    "edited" : false
+  }
+]

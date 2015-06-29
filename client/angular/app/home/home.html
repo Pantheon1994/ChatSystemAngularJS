@@ -1,0 +1,48 @@
+<div ng-include="'angular/app/navbar/navbar.html'"></div>
+<div class="container">
+    <div class="well">
+        <div ng-repeat="message in home.messages">
+            <div ng-if="message.isBeingEdited" class="panel panel-default">
+                <div class="panel-body">
+                    <textarea class="form-control" placeholder="Write a message" ng-model="message.tempText"></textarea><br/>
+                     <span class="pull-right">
+                          <button class="btn btn-success" ng-click="home.cancelEditing(message)">Cancel
+                          </button>
+                         <button class="btn btn-success" ng-click="home.saveEditing(message)">Save
+                         </button>
+                    </span>
+                </div>
+            </div>
+            <div ng-if="!message.isBeingEdited" class="panel panel-default">
+                <div class="panel-body">
+                    <div ng-if="message.edited"><i>Edité</i></div>
+                    <span class="pull-right">
+                          <button class="btn btn-success" ng-click="home.editMessage(message)"><i class="fa fa-cog"></i>
+                          </button>
+                    </span>
+                    <span class="pull-right">
+                         <button class="btn btn-danger"  ng-click="home.deleteMessage(message.id)"><i class="fa fa-times"></i>
+                         </button>
+                        </span>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <h3><b>{{message.user}}</b></h3>
+                        </div>
+                    </div>
+                    {{message.text}}<br/>
+                    <small><i>{{message.date | date:'medium'}}</i></small>
+                </div>
+            </div>
+        </div>
+        <div class="well">
+            <div class="row">
+                <div class="col-md-4">
+                    <input type="text" class="form-control" placeholder="Name" ng-model="home.newMessage.username"><br/>
+                </div>
+            </div>
+            <textarea class="form-control" placeholder="Write a message" ng-model="home.newMessage.text"></textarea><br/>
+
+            <div class="btn btn-danger" ng-click="home.sendMessage()">Send message</div>
+        </div>
+    </div>
+</div>
